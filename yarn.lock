@@ -58,7 +58,7 @@
   resolved "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.18.8.tgz#2483f565faca607b8535590e84e7de323f27764d"
   integrity sha512-HSmX4WZPPK3FUxYp7g2T6EyO8j96HlZJlxmKPSh6KAcqwyDrfx7hKjXpAW/0FhFfTJsR0Yt4lAjLI2coMptIHQ==
 
-"@babel/core@^7.11.6", "@babel/core@^7.12.3":
+"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.16.7":
   version "7.18.10"
   resolved "https://registry.npmjs.org/@babel/core/-/core-7.18.10.tgz#39ad504991d77f1f3da91be0b8b949a5bc466fb8"
   integrity sha512-JQM6k6ENcBFKVtWvLavlvi/mPcpYZ3+R+2EySDEMSMbp7Mn4FexlbbJVrx2R7Ijhr01T8gyqrOaABWIOgxeUyw==
@@ -79,27 +79,6 @@
     json5 "^2.2.1"
     semver "^6.3.0"
 
-"@babel/core@^7.16.7":
-  version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.16.7.tgz#db990f931f6d40cb9b87a0dc7d2adc749f1dcbcf"
-  integrity sha512-aeLaqcqThRNZYmbMqtulsetOQZ/5gbR/dWruUCJcpas4Qoyy+QeagfDsPdMrqwsPRDNxJvBlRiZxxX7THO7qtA==
-  dependencies:
-    "@babel/code-frame" "^7.16.7"
-    "@babel/generator" "^7.16.7"
-    "@babel/helper-compilation-targets" "^7.16.7"
-    "@babel/helper-module-transforms" "^7.16.7"
-    "@babel/helpers" "^7.16.7"
-    "@babel/parser" "^7.16.7"
-    "@babel/template" "^7.16.7"
-    "@babel/traverse" "^7.16.7"
-    "@babel/types" "^7.16.7"
-    convert-source-map "^1.7.0"
-    debug "^4.1.0"
-    gensync "^1.0.0-beta.2"
-    json5 "^2.1.2"
-    semver "^6.3.0"
-    source-map "^0.5.0"
-
 "@babel/generator@^7.16.5":
   version "7.16.5"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.16.5.tgz#26e1192eb8f78e0a3acaf3eede3c6fc96d22bedf"
@@ -109,7 +88,7 @@
     jsesc "^2.5.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.16.7", "@babel/generator@^7.16.8":
+"@babel/generator@^7.16.8":
   version "7.16.8"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.16.8.tgz#359d44d966b8cd059d543250ce79596f792f2ebe"
   integrity sha512-1ojZwE9+lOXzcWdWmO6TbUzDfqLD39CmEhN8+2cX9XkDo5yW1OpgfejfliysR2AWLpMamTiOiAp/mtroaymhpw==
@@ -532,15 +511,6 @@
     "@babel/template" "^7.16.7"
     "@babel/traverse" "^7.16.8"
     "@babel/types" "^7.16.8"
-
-"@babel/helpers@^7.16.7":
-  version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.16.7.tgz#7e3504d708d50344112767c3542fc5e357fffefc"
-  integrity sha512-9ZDoqtfY7AuEOt3cxchfii6C7GDyyMBffktR5B2jvWv8u2+efwvpnVKXMWzNehqy68tKgAfSwfdw/lWpthS2bw==
-  dependencies:
-    "@babel/template" "^7.16.7"
-    "@babel/traverse" "^7.16.7"
-    "@babel/types" "^7.16.7"
 
 "@babel/helpers@^7.18.9":
   version "7.18.9"
@@ -2188,15 +2158,15 @@
     tweetnacl "^1.0.3"
     tweetnacl-util "^0.15.1"
 
-"@metamask/execution-environments@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@metamask/execution-environments/-/execution-environments-0.18.0.tgz#4af5f5a056f39f445e2e461105ae5ff39163d39b"
-  integrity sha512-0XTkpMyWwiXDE21SRwtO5JWTElgzsrNdgZhaNqS4NpjZPr+jOrgiZH+Jeb/YXdkW6oBF9nX8yLnnSvWdGzIpyA==
+"@metamask/execution-environments@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@metamask/execution-environments/-/execution-environments-0.18.1.tgz#46853241fc0dda4e92b358d56fea927745efef42"
+  integrity sha512-PnEPvcIBsNq2rYshrZePAPL3vGaWPrJyztHlSn+dP9vM2XR1M+Qc0/QrgGy6hnOidQIkhn2ZuFfsnm72dJFmUA==
   dependencies:
     "@metamask/object-multiplex" "^1.2.0"
     "@metamask/post-message-stream" "^6.0.0"
     "@metamask/providers" "^9.0.0"
-    "@metamask/snap-types" "^0.18.0"
+    "@metamask/snap-types" "^0.18.1"
     "@metamask/utils" "^2.0.0"
     eth-rpc-errors "^4.0.3"
     pump "^3.0.0"
@@ -2256,14 +2226,14 @@
   resolved "https://registry.yarnpkg.com/@metamask/safe-event-emitter/-/safe-event-emitter-2.0.0.tgz#af577b477c683fad17c619a78208cede06f9605c"
   integrity sha512-/kSXhY692qiV1MXu6EeOZvg5nECLclxNXcKCxJ3cXQgYuRymRHpdx/t7JXfsK+JLjwA1e1c1/SBrlQYpusC29Q==
 
-"@metamask/snap-controllers@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@metamask/snap-controllers/-/snap-controllers-0.18.0.tgz#1be6f13d0e20596ebc88e2391511652e2e843ca3"
-  integrity sha512-E6qOPXxVa/8LLUUTn6/w84xFxW3GCdkd4zYOnC1HdOOuG0g2uZ+zvz+9k8oSX71/0DFtmTzTbYrzAFGDDum3Pw==
+"@metamask/snap-controllers@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@metamask/snap-controllers/-/snap-controllers-0.18.1.tgz#081da8664436aed5d3a0ff5f682807de7424fcff"
+  integrity sha512-hoozCeKVV+HCMIPmDg2F5KcIyBEsbIFTM5xL4dmkf5i16+yWDkdNN2iCIfePk+gtpcWyUK6bsevOdu2KwVgEHg==
   dependencies:
     "@metamask/browser-passworder" "^3.0.0"
     "@metamask/controllers" "^30.0.0"
-    "@metamask/execution-environments" "^0.18.0"
+    "@metamask/execution-environments" "^0.18.1"
     "@metamask/object-multiplex" "^1.1.0"
     "@metamask/obs-store" "^7.0.0"
     "@metamask/post-message-stream" "^6.0.0"
@@ -2286,31 +2256,31 @@
     semver "^7.3.5"
     tar-stream "^2.2.0"
 
-"@metamask/snap-types@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@metamask/snap-types/-/snap-types-0.18.0.tgz#1a87fb60f1413f08e2b52ec2834dba74d2a92c7e"
-  integrity sha512-e3LWwpNLFfSz3UegH/Rj7PE7WMrnt8R2s3014fq80nkqYzP0l+pOo5elnHM9J+MXaeD8dLWYr27CT4jEBT4HVw==
+"@metamask/snap-types@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@metamask/snap-types/-/snap-types-0.18.1.tgz#3e5e07a14d69ae43b246ae1abb24d7d1d40eca0f"
+  integrity sha512-ri9vznetbO2TjZjWUqfONgXyPEXP9j8VBgU8xCxCqqiyCi/sMIwSCemp81wnDN+kt7m7zXlC8TmEV3MkSnqGmw==
   dependencies:
     "@metamask/controllers" "^30.0.0"
 
-"@metamask/snap-utils@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@metamask/snap-utils/-/snap-utils-0.18.0.tgz#0e4aa112fe88c857c75daf184e1093e7cac73c81"
-  integrity sha512-iEv2c2IsIZgDVcqdgozyA3zRkV8OqK00rw7AvNpUZMtHZW/yeEKVPN3Y6BiN0EvQnWRXWZm5pdYTPDLyZJhhfg==
+"@metamask/snap-utils@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@metamask/snap-utils/-/snap-utils-0.18.1.tgz#3c85d2d15ce1eac7e55f8ce00500ef7ff51a5aaf"
+  integrity sha512-2QVkgSkeeyjwKvxIZTuqudo5hMkn6IbI74Kzx/yJEOuK28MYyxx1FrPKlu7yTG2ZRJQ1zM9pBMHPF3XhZ4manA==
   dependencies:
     "@chainsafe/strip-comments" "^1.0.7"
 
-"@metamask/snaps-browserify-plugin@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@metamask/snaps-browserify-plugin/-/snaps-browserify-plugin-0.18.0.tgz#2712245c475d2a64427d758ed6d0995eba50e76d"
-  integrity sha512-LqiYCw1G3EclrFnC0nkbrWKLus1nSaGhHAN7nyQsFa9q74/r531y/n//+W4i4TZ07ylaT1v6tWE46ShlHHTOpg==
+"@metamask/snaps-browserify-plugin@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@metamask/snaps-browserify-plugin/-/snaps-browserify-plugin-0.18.1.tgz#d048c28f8d17d825d9841b5a33abd6f969fdaf74"
+  integrity sha512-jUgoyQfaLy1p/8MiEgSGyEVg5RQ8cOZWBVtDjiHRI9FJ5+XYrM5OIXeSSs/MofTMAcJumv1Wi0/6+tSdAC6nIQ==
   dependencies:
-    "@metamask/snap-utils" "^0.18.0"
+    "@metamask/snap-utils" "^0.18.1"
 
-"@metamask/snaps-cli@0.18.0":
-  version "0.18.0"
-  resolved "https://registry.npmjs.org/@metamask/snaps-cli/-/snaps-cli-0.18.0.tgz#5d75f6a48394a960c3cc6b2c5f0e256a0ac0f5f9"
-  integrity sha512-SKRtlUAk2qOk8fqzLP6RnRkbIdezDxJLTFgy8HIbxG8gGJ5IbpzA6FEixPwDind6yKr6pWt/17T73ZJQehNe5A==
+"@metamask/snaps-cli@0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@metamask/snaps-cli/-/snaps-cli-0.18.1.tgz#06668ab553577601c39c5ccd1ee1356c24af73d2"
+  integrity sha512-+9fH3xqJa0o6mR57iHkWHv4yfjPpcKyFwlWuRsdQFxsZ8/lT0iNrBk1U/RXqm2ASQ0S13Q2plXNTocviQ0NrFA==
   dependencies:
     "@babel/core" "^7.16.7"
     "@babel/plugin-proposal-class-properties" "^7.16.7"
@@ -2320,8 +2290,8 @@
     "@babel/plugin-transform-runtime" "^7.16.7"
     "@babel/preset-env" "^7.16.7"
     "@babel/preset-typescript" "^7.16.7"
-    "@metamask/snap-controllers" "^0.18.0"
-    "@metamask/snaps-browserify-plugin" "^0.18.0"
+    "@metamask/snap-controllers" "^0.18.1"
+    "@metamask/snaps-browserify-plugin" "^0.18.1"
     "@metamask/utils" "^2.0.0"
     babelify "^10.0.0"
     browserify "^17.0.0"
@@ -6347,13 +6317,6 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.1.2:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
-  integrity sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
-  dependencies:
-    minimist "^1.2.5"
-
 json5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
@@ -8813,20 +8776,7 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-yargs@^17.0.1:
-  version "17.3.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.3.0.tgz#295c4ffd0eef148ef3e48f7a2e0f58d0e4f26b1c"
-  integrity sha512-GQl1pWyDoGptFPJx9b9L6kmR33TGusZvXIZUT+BOz9f7X2L94oeAskFYLEg/FkhV06zZPBYLvLZRWeYId29lew==
-  dependencies:
-    cliui "^7.0.2"
-    escalade "^3.1.1"
-    get-caller-file "^2.0.5"
-    require-directory "^2.1.1"
-    string-width "^4.2.3"
-    y18n "^5.0.5"
-    yargs-parser "^21.0.0"
-
-yargs@^17.3.1:
+yargs@^17.0.1, yargs@^17.3.1:
   version "17.5.1"
   resolved "https://registry.npmjs.org/yargs/-/yargs-17.5.1.tgz#e109900cab6fcb7fd44b1d8249166feb0b36e58e"
   integrity sha512-t6YAJcxDkNX7NFYiVtKvWUz8l+PaKTLiL63mJYWR2GnHq2gjEWISzsLp9wg3aY36dY1j+gfIEL3pIF+XlJJfbA==

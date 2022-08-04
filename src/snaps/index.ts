@@ -1,22 +1,13 @@
 import { OnRpcRequestHandler } from '@metamask/snap-types';
+import {sendTransfer} from '../../helpers/utils';
 
-export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
+export const onRpcRequest: OnRpcRequestHandler = async ({ origin, request }) => {
 
-  console.log('on rpc request', origin, request);
   switch (request.method) {
-    case 'hello':
-      return wallet.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: `Hello!`,
-            description:
-              'blabla.',
-            textAreaContent:
-              'blabla',
-          },
-        ],
-      });
+    case 'tl_transfer':
+
+      return await sendTransfer(wallet, request.params.payment);
+
     default:
       throw new Error('Method not found.');
   }

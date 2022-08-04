@@ -2,12 +2,17 @@ import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import snapCfg from '../snap.config';
 import snapManifest from '../snap.manifest.json';
-import { TLNetwork } from '@trustlines/trustlines-clientlib'
+import { getTrustlinesForUser, sendSnapMethod } from '../helpers/utils';
+
 
 const Home: NextPage = () => {
   const [snapId, setSnapId] = useState('');
-  // const snapId = `local:${window.location.href}`;
+  const [currentUser, setCurrentUser] = useState('');
+  const [trustlines, setTrustlines] = useState([]);
 
+  useEffect(() => {
+    currentUser && getTrustlinesForUser(currentUser).then(setTrustlines);
+  }, [currentUser]);
   useEffect(
     () => {
       if (window.location.hostname === 'localhost') {
@@ -17,58 +22,41 @@ const Home: NextPage = () => {
       } else {
         setSnapId(`npm:${snapManifest.source.location.npm.packageName}`);
       }
-    }
-  )
+    },
+  );
 
   // here we get permissions to interact with and install the snap
-  async function connect () {
+  const connect = async () => {
     const response = await ethereum.request({
       method: 'wallet_enable',
       params: [{
         wallet_snap: { [snapId]: {} },
+        eth_accounts: {},
       }],
-    })
+    });
 
     console.log(JSON.stringify(response));
     if (response && (response as any).accounts && (response as any).accounts.length > 0) {
-      // setCurrentUser((response as any).accounts[0].toLowerCase());
+      setCurrentUser((response as any).accounts[0].toLowerCase());
     }
-  }
+  };
 
-  // here we call the snap's "hello" method
-  const send = async () => {
-    console.log('snapid', snapId);
-    try {
-      const response = await ethereum.request({
-        method: 'wallet_invokeSnap',
-        params: [snapId, {
-          method: 'hello'
-        }]
-      })
-    } catch (err) {
-      console.error(err)
-      // alert('Problem happened: ' + err.message || err)
-    }
-  }
+  const sendTrustlinesTransfer = async (
+    recipientAddress, currencyNetwork, amount,
+  ): Promise<string> => {
 
-    const tlbc = new TLNetwork({
-      relayUrl: 'https://trustlines-relay.giveth.io/api/v1',
-      messagingUrl: 'https://messaging.trustlines.app/api/v1'
-    })
-
-  // const allDeployedCurrencyNetworks = await tlNetwork.currencyNetwork.getAll()
-
-  useEffect(() => {
-    const getNetworks = async () => {
-      // const allDeployedCurrencyNetworks = await tlbc.currencyNetwork.getAll()
-      // console.log(allDeployedCurrencyNetworks)
-
-      // await fetch("https://trustlines-relay.giveth.io/api/v1/networks").catch(err => {console.log(err)})
-    }
-
-    getNetworks()
-  }, [])
-
+    console.log("wtf",recipientAddress, currencyNetwork, amount)
+    await ethereum.request({
+      method: 'wallet_invokeSnap',
+      params: [snapId, {
+        method: 'tl_transfer', params: {
+          payment: {
+            currencyNetwork, amount, recipientAddress,
+          },
+        },
+      }],
+    });
+  };
 
 
   return (
@@ -92,9 +80,29 @@ const Home: NextPage = () => {
         </ul>
       </details>
       <br />
+      {currentUser ? (
+          <>
+            <div>Your trustlines</div>
+            {trustlines.map(tl => {
+              return <div key={`${tl.counterParty}-${tl.currencyNetwork}`}>{tl.currencyNetwork} | {tl.counterParty} | given: {tl.leftGiven} |
+                received: {tl.leftReceived}
+                <button onClick={() => sendTrustlinesTransfer(tl.counterParty, tl.currencyNetwork, 5)}>send 5</button>
+                ;
+              </div>;
+            })}
+          </>
 
-      <button className='connect' onClick={connect}>Connect</button>
-      <button className='sendHello' onClick={send}>Send Hello</button>
+        ) :
+        (
+          <>
+
+            <button className='connect' onClick={connect}>Connect</button>
+          </>
+
+        )
+      }
+
+
     </>
   );
 };
